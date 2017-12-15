@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+"${JAVA_BIN}" $JAVA_ARGS_CLI \
+    -cp "${INSTALL_DIR}/puppet-server-release.jar" \
+    clojure.main -m puppetlabs.puppetserver.cli.ruby \
+    --config "${CONFIG}" -- "$@"

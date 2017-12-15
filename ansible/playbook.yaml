@@ -1,0 +1,4 @@
+- hosts: docker
+  tasks:
+    roles:
+    - verificar

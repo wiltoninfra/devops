@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+restartfile="/opt/puppetlabs/server/data/puppetserver/restartcounter"
+
+if [ ! -e "${INSTALL_DIR}/ezbake-functions.sh" ]; then
+    echo "Unable to find ${INSTALL_DIR}/ezbake-functions.sh script, failing start." 1>&2
+    exit 1
+fi
+
+. "${INSTALL_DIR}/ezbake-functions.sh"
+
+init_restart_file "$restartfile" || exit $?
+
+if !(echo "${@}" | grep -e "--debug" -q)
+then
+    LOG_APPENDER="-Dlogappender=STDOUT"
+fi
+
+COMMAND="${JAVA_BIN} ${JAVA_ARGS} ${LOG_APPENDER} \
+         -Djava.security.egd=/dev/urandom \
+         -cp ${INSTALL_DIR}/puppet-server-release.jar \
+         clojure.main -m puppetlabs.trapperkeeper.main \
+         --config ${CONFIG} --bootstrap-config ${BOOTSTRAP_CONFIG} \
+         --restart-file "${restartfile}" \
+         ${@}"
+
+pushd "${INSTALL_DIR}" &> /dev/null
+if [ "$EUID" = "0" ] && command -v runuser &> /dev/null; then
+  runuser "${USER}" -s /bin/bash -c "$COMMAND"
+elif command -v sudo &> /dev/null; then
+  sudo -H -u "${USER}" $COMMAND
+else
+  su "${USER}" -s /bin/bash -c "$COMMAND"
+fi
+popd &> /dev/null

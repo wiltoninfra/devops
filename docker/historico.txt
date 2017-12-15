@@ -1,0 +1,143 @@
+    1  vim /etc/ssh/sshd_config 
+    2  systemctl restart sshd
+    3  hostnamectl set-hostname docker
+    4  bash
+    5  vim /etc/network/interfaces
+    6  ip a
+    7  systemctl restart networking.service 
+    8  reboot
+    9  ip a
+   10  cat /etc/network/interfaces
+   11  reboot
+   12  ip a
+   13  vim /etc/network/interfaces
+   14  reboot
+   15  ip a
+   16  ping 8.8.8.8
+   17  ping google.com.br
+   18  cat /etc/resolv.conf 
+   19  vim /etc/resolvconf/resolv.conf.d/base 
+   20  reboot
+   21  cat /etc/hosts
+   22  apt-get install apt-transport-https ca-certificates curl software-properties-common -y
+   23  iptable -l
+   24  iptables -l
+   25  iptables -L
+   26  iptables -F
+   27  iptables -F -NAT -N
+   28  iptables -F -NAT
+   29  iptables -t nat -F
+   30  iptables -F
+   31  service httpd start
+   32  iptables -F
+   33  halt
+   34  ls
+   35  vim dockerfile
+   36  docker ps
+   37  docker ps -a
+   38  vim dockerfile
+   39  docker image rm deploy
+   40  docker buil -t .
+   41  docker build -t .
+   42  docker 
+   43  ls
+   44  mv dockerfile Dockerfile
+   45  docker build -t .
+   46  docker build .
+   47  vim dockerfile
+   48  ls
+   49  vim Dockerfile 
+   50  docker build .
+   51  hatl
+   52  halt
+   53  docker build .
+   54  vim Dockerfile 
+   55  docker build .
+   56  vim Dockerfile 
+   57  docker build .
+   58  vim Dockerfile 
+   59  docker build .
+   60  vim puppet.conf
+   61  docker build .
+   62  docker build -t deploy .
+   63  ls /root/.ssh
+   64  ssh-keygen
+   65  docker build -t deploy .
+   66  vim  Dockerfile 
+   67  docker build -t deploy .
+   68  vim  Dockerfile 
+   69  docker build -t deploy .
+   70  docker ps -a
+   71  docker image rm deply
+   72  docker image rm deploy
+   73  docker build -t deploy .
+   74  docker exec -it deploy /bin/bash
+   75  docker image rm docker image ls
+   76  docker image rm debian
+   77  docker image rm ubuntu
+   78  docker image rm nginx
+   79  docker image cemtos
+   80  docker image rmi cemtos
+   81  docker image rm cemtos
+   82  docker ps -a
+   83  docker-compose stop
+   84  docker-compose rm
+   85  docker ps -a
+   86  docker rmi$(docker images -q)
+   87  docker rmi $(docker images -q)
+   88  docker ps -a
+   89  docker stop $(docker ps -a -q)
+   90  docker rm $(docker ps -a -q)
+   91  docker rmi $(docker images -q)
+   92  docker ps -a
+   93  docker build -t deploy .
+   94  docker ps -a
+   95  docker ps 
+   96  docker attach deploy
+   97  docker up -d build .
+   98  docker up -d build 
+   99  docker build .
+  100  docker ps 
+  101  docker ps -a
+  102  docker run -it
+  103  docker run -it deploy
+  104  docker attach deploy
+  105  docker attac deploy
+  106  docker ps -a
+  107  docker attach deploy
+  108  docker attach 4df8ed7a6ba6
+  109  docker stop 4df8ed7a6ba6
+  110  docker attach 4df8ed7a6ba6
+  111  docker ps -a
+  112  docker attach vibrant_curie
+  113  docker stopped vibrant_curie
+  114  docker stop vibrant_curie
+  115  docker ps -a
+  116  docker attach vibrant_curie
+  117  docker start vibrant_curie
+  118  docker attach vibrant_curie
+  119  vim Dockerfile 
+  120  apt-get update && apt-get install nginx -y
+  121  apt-get remove apache2 --purge
+  122  apt-get update && apt-get upgrade -y
+  123  ls
+  124  apt-get install nginx -y
+  125  nginx --version
+  126  nginx -version
+  127  nginx -v
+  128  rm /var/www/html/index.html 
+  129  halt
+  130  exit
+  131  docker ps -a
+  132  docker attach 90e73a4f552a
+  133  ls
+  134  vim config 
+  135  docker ps
+  136  cat history >> historico
+  137  cat history > historico.txt
+  138  ls
+  139  vim historico.txt 
+  140  history
+  141  cat history >> historico.txt
+  142  cat historico.txt 
+  143  history >> historico.txt

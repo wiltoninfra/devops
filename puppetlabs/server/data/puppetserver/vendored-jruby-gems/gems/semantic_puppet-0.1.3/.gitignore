@@ -1,0 +1,8 @@
+.bundle
+.rbenv-*
+.yardoc
+coverage
+doc
+.idea/
+/.project
+Gemfile.lock
